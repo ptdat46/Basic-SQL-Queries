@@ -96,7 +96,8 @@
       WHERE o.status = 'completed'
     - Result:
       
-      <img width="136" height="137" alt="image" src="https://github.com/user-attachments/assets/32a3782e-65e7-4ebe-b393-6f7129dc9968" />
+      <img width="140" height="98" alt="image" src="https://github.com/user-attachments/assets/4e098f79-d653-44f9-b8e0-20f92534fd03" />
+
 - **Calculate the total number of orders for each customer**
   
     - ```sql
@@ -132,7 +133,8 @@
       WHERE o.customer_id IS NULL;
     - Result:
  
-      <img width="210" height="84" alt="image" src="https://github.com/user-attachments/assets/20e68080-8dd2-4e04-90bb-258b755142de" />
+      <img width="236" height="64" alt="image" src="https://github.com/user-attachments/assets/65d616c1-3945-4030-ae04-80f19c3b91f6" />
+
 - **Get the most sold product**
   
     - ```sql
@@ -148,7 +150,8 @@
       LIMIT 1;
     - Result:
  
-      <img width="279" height="53" alt="image" src="https://github.com/user-attachments/assets/1e639007-bdf7-44de-9862-0a2076cbc0d9" />
+      <img width="280" height="58" alt="image" src="https://github.com/user-attachments/assets/9316accc-5f46-40a9-80b0-0182aa42cf97" />
+
 
 
 
