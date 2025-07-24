@@ -89,7 +89,7 @@
 - **Get the names of products that have been sold**
   
     - ```sql
-      SELECT DISTINCT name AS product_name
+      SELECT DISTINCT p.name AS product_name
       FROM products p
       JOIN order_items oi ON oi.product_id = p.id
       JOIN orders o ON o.id = oi.order_id
