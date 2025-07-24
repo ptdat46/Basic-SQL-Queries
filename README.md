@@ -92,6 +92,8 @@
       SELECT DISTINCT name AS product_name
       FROM products p
       JOIN order_items oi ON oi.product_id = p.id
+      JOIN orders o ON o.id = oi.order_id
+      WHERE o.status = 'completed'
     - Result:
       
       <img width="136" height="137" alt="image" src="https://github.com/user-attachments/assets/32a3782e-65e7-4ebe-b393-6f7129dc9968" />
@@ -127,7 +129,7 @@
         c.name AS customer_name
       FROM customers c
       LEFT JOIN orders o ON c.id = o.customer_id
-      WHERE o.customer_id IS NULL OR o.status = 'cancelled';
+      WHERE o.customer_id IS NULL;
     - Result:
  
       <img width="210" height="84" alt="image" src="https://github.com/user-attachments/assets/20e68080-8dd2-4e04-90bb-258b755142de" />
@@ -139,6 +141,8 @@
         SUM(oi.quantity) AS total_quantity_sold
       FROM products p
       JOIN order_items oi ON p.id = oi.product_id
+      JOIN orders o ON o.id = oi.order_id
+      WHERE o.status = 'completed'
       GROUP BY p.id, p.name
       ORDER BY total_quantity_sold DESC
       LIMIT 1;
