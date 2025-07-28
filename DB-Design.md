@@ -19,6 +19,7 @@ Design a simple library management system. The system needs to manage informatio
         user_id INT NOT NULL,
 	borrow_date DATETIME DEFAULT CURRENT_TIMESTAMP,
 	return_date DATETIME,
+	amount INT NOT NULL,
         FOREIGN KEY (book_id) REFERENCES books(id),
       	FOREIGN KEY (user_id) REFERENCES users(id)
       )
