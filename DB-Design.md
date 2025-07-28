@@ -48,7 +48,8 @@ Need to manage information about customers, products, orders, order details and 
     	id INT PRIMARY KEY AUTO_INCREMENT,
         user_id INT NOT NULL,
         total_amount DECIMAL(10,2) NOT NULL,
-        date DATETIME DEFAULT CURRENT_TIMESTAMP,
+        order_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+	shipping_date DATETIME NOT NULL,
         status ENUM('completed', 'pending', 'cancelled') NOT NULL DEFAULT 'pending',
         FOREIGN KEY (user_id) REFERENCES users(id)
     );
@@ -67,18 +68,9 @@ Need to manage information about customers, products, orders, order details and 
     	id INT PRIMARY KEY AUTO_INCREMENT,
         order_id INT NOT NULL,
         total_amount DECIMAL(10,2) NOT NULL,
-        status ENUM('paid', 'unpaid') NOT NULL,
+        is_paid BOOLEAN DEFAULT FALSE,
         payment_method ENUM('cash', 'card', 'bank transfer') NOT NULL DEFAULT 'cash',
         FOREIGN KEY (order_id) REFERENCES orders(id)
-    );
-    
-    CREATE TABLE order_details (
-    	id INT PRIMARY KEY AUTO_INCREMENT,
-        order_id INT NOT NULL,
-        payment_id INT NOT NULL,
-        shipping_date DATETIME NOT NULL,
-        FOREIGN KEY (order_id) REFERENCES orders(id),
-        FOREIGN KEY (payment_id) REFERENCES payments(id)
     );
 ```
 
