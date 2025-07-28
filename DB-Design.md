@@ -17,8 +17,8 @@ Design a simple library management system. The system needs to manage informatio
       	id INT PRIMARY KEY AUTO_INCREMENT, 
         book_id INT NOT NULL,
         user_id INT NOT NULL,
-        date DATETIME DEFAULT CURRENT_TIMESTAMP,
-        status ENUM('borrowed', 'returned') NOT NULL,
+	borrow_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+	return_date DATETIME,
         FOREIGN KEY (book_id) REFERENCES books(id),
       	FOREIGN KEY (user_id) REFERENCES users(id)
       )
